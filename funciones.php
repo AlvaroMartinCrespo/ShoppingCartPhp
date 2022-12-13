@@ -157,9 +157,11 @@ function comprobarProdPOST($productos)
 {
   $encontrado = false;
   for ($i = 0; $i < count($productos); $i++) {
-    if (array_keys($_POST)[0] === $productos[$i]['nombre']) {
+    if (@array_keys($_POST)[0] === $productos[$i]['nombre']) {
       $encontrado = true;
     }
   }
+
+
   return $encontrado;
 }
